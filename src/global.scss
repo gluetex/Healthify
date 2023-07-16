@@ -1,0 +1,88 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+ion-content{
+
+    --ion-background-color: white;
+    //heys
+}
+
+ion-toolbar {
+    --ion-background-color: #B2D2A4;
+  
+  }
+
+  ion-tab-bar{
+    --ion-tab-bar-background: #B2D2A4;
+    --ion-tab-bar-color-selected: white;
+  }
+   ion-icon{
+     color: white;
+   }
+
+   ion-title{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+
+   }
+
+   
+   ion-item.inputArea ion-label {
+    --highlight-color-focused: transparent;
+    --highlight-color-invalid: transparent;
+  }
+
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+  }
+
+  .custom-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+  }
+
+  :root {
+    --ion-button-background: #85b364; /* Replace with your desired background color value */
+  }
+  
+  ion-button {
+    --background: var(--ion-button-background);
+    --background-activated: transparent; /* Disable default background highlight */
+    transition: background-color 0.2s; /* Add a transition effect for background color */
+  }
+  
+  ion-button:active {
+    background-color: rgba(1, 2, 3, 0.1); /* Set the desired fade color */
+  }

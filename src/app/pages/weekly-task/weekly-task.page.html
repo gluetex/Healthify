@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="goBackAction()" color="light"><ion-icon color="light" name="chevron-back-outline"></ion-icon>Back</ion-button>
+      </ion-buttons>
+      <ion-title class="custom-title" size="large">Weekly Tasks</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngFor="let card of taskCards">
+    <img [src]="card.image">
+    <ion-card-header>
+      <ion-card-title>{{ card.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ card.description }}</p>
+     
+      <div class="progress-outer">
+        <div class="progress-inner" [style.width]="getProgressPercentage(card)">
+          {{ getProgressPercentage(card) }}
+        </div>
+      </div>
+      <ion-button (click)="onCardButtonClick(card)">Done</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+ 
+
+ 

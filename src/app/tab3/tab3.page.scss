@@ -1,0 +1,56 @@
+ion-content {
+    --ion-background-color:#FAEBD7;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-container {
+    position: relative;
+  }
+  
+  .card-container:hover .card-image {
+    filter: blur(4px); /* Apply blur effect */
+  }
+  
+  .card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+  }
+  
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .image-container div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    border-style: hidden;
+  }
+  
+  
+  img:hover {
+    transform: scale(1.1);
+  }
+

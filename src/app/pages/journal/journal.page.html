@@ -1,0 +1,35 @@
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="goBackAction()" color="light"><ion-icon color="light" name="chevron-back-outline"></ion-icon>Back</ion-button>
+      </ion-buttons>
+      <ion-title class="custom-title" size="large">Journal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<div class="cardContainer">
+  <ion-card >
+    <ion-card-header class="header">
+      <ion-card-subtitle class="custom-title" color="dark">What's On Your Mind</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content class="cardColor">
+  <ion-textarea class="textContainer" label="" labelPlacement="floating" fill="outline" placeholder="Enter text" shape="round"></ion-textarea>
+    </ion-card-content>
+    <div class="journalButton">
+      <ion-button expand="block" fill="clear" shape="round">Don't Save</ion-button>
+      <ion-button expand="block" fill="clear" shape="round">Save</ion-button>
+    </div>
+    
+
+  </ion-card>
+  
+</div>
+
+</ion-content>
+ 
+
+<!-- <ion-toast [message]="successMessage" *ngIf="showSuccessToast" position="middle"></ion-toast> -->

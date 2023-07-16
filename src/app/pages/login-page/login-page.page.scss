@@ -1,0 +1,77 @@
+ion-content{
+
+    --ion-background-color: #B2D2A4;
+    display: flex;
+    align-items: center;
+    justify-content: center
+    
+}
+
+ion-button{
+    --background: #B2D2A4;
+
+    }
+
+ .forgotButton{
+    --background: #FAEBD7;
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+}
+
+    
+.ionCard{
+
+    background: #FAEBD7;
+
+}
+
+.inputArea{
+
+    background: #FAEBD7;
+    width: 100%;
+
+}
+
+ion-item{
+    --ion-item-background:#FAEBD7;
+
+
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%; /* Adjust the value as needed to position the logo */
+  }
+  
+  .logo {
+    max-width: 200px; /* Adjust the size of the logo as needed */
+  }
+
+  ion-card-title{
+    font-weight:normal;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+
+  }
+
+  ion-button {
+    --background: #B2D2A4;
+
+    color: #FFFFFF;
+  }
+
+  ion-button.custom-button {
+    --background: #B2D2A4;
+    color: #FFFFFF; /* Set the desired text color */
+    outline: none; /* Remove the focus outline */
+  }
+  
+  ion-button.custom-button:hover,
+  ion-button.custom-button:active,
+  ion-button.custom-button:focus {
+    --background: #B2D2A4; /* Set the desired background color */
+    color: #FFFFFF; /* Set the desired text color */
+    outline: none; /* Remove the focus outline */
+  }

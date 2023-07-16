@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+  }
+  
+  .column {
+    flex:2;
+    padding: 0%;
+    
+  }
+
+  ion-card {
+    display: flex;
+    align-items: flex-start; /* Adjust alignment as needed */
+    justify-content: center;
+    flex-direction: column;
+    background-color: #FFF5C3;
+  }
+  
+  ion-card-content {
+    padding: 0;
+  }
+  
+  ion-card-content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+  }
+  
+  ion-card-header {
+    margin-top: 0;
+  }
+  .custom-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+  }
+  
+  ion-content{
+
+    --ion-background-color: #FAEBD7;
+  
+  
+  }
+ 

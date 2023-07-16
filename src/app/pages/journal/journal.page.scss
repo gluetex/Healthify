@@ -1,0 +1,42 @@
+ion-card{
+
+    background: white;
+    width: 100%;
+
+}
+
+ion-content{
+    --ion-background-color:#FAEBD7;
+}
+.cardColor{
+    background: white;
+}
+
+.header{
+
+    background: #fcbe4f;
+}
+
+
+.textContainer{
+
+height: 70vh;
+
+}
+
+.cardContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.journalButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    ion-button{
+        color:white;
+    }
+}

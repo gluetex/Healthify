@@ -1,0 +1,7 @@
+{
+  "name": "mentalHealthApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
