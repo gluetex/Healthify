@@ -1,0 +1,63 @@
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("https://media.giphy.com/media/HRXnPYf10Zx0wz4alF/giphy.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.circular-timer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #446fa0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #446fa0;
+  transform-origin: center;
+  animation: countdown-animation linear infinite;
+}
+
+.timer-container {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  color: white;
+}
+
+.timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.meditateButton {
+  margin-top: 16px;
+  --ion-color-primary: red;
+}
+
+.meditateButton ion-button {
+  --background: #446fa0;
+}
+
+ion-toolbar {
+  --background: #446fa0;
+}

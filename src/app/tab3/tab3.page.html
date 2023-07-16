@@ -1,24 +1,21 @@
-<ion-header collapse="condense">
+<ion-header>
   <ion-toolbar>
     <ion-title class="custom-title" size="large">Self Care</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-    <div class="image-container">
-      <div (click)="navigateToPage1()">
-        <img src="../../assets/meditation.png" alt="Image 1" />
-      </div>
-      <div (click)="navigateToPage2()">
-        <img src="../../assets/journal.png" alt="Image 2" />
-      </div>
-      <div (click)="navigateToPage3()">
-        <img src="../../assets/form.png" alt="Image 3" />
-      </div>
+  <div class="image-container">
+    <div (click)="navigateToMeditate()">
+      <img src="../../assets/meditation.png" alt="Image 1" />
     </div>
-  
+    <div (click)="navigateToJournal()">
+      <img src="../../assets/journal.png" alt="Image 2" />
+    </div>
+    <div>
+      <a href="https://forms.gle/oEaLCBuLqx2rSsar8"
+        ><img src="../../assets/form.png" alt="Image 3"
+      /></a>
+    </div>
+  </div>
 </ion-content>
-
-
-

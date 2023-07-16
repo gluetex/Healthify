@@ -4,26 +4,20 @@ import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  styleUrls: ['tab3.page.scss'],
 })
 export class Tab3Page {
-
   constructor(private navCtrl: NavController) {}
-  
 
-  navigateToPage1() {
-    // Navigate to Page 1
+  navigateToMeditate() {
     this.navCtrl.navigateForward('/meditate');
   }
 
-  navigateToPage2() {
-    // Navigate to Page 2
+  navigateToJournal() {
     this.navCtrl.navigateForward('/journal');
   }
 
-  navigateToPage3() {
-    // Navigate to Page 3
-    this.navCtrl.navigateForward('/form');
-  }
-
+  // navigateToForm() {
+  //   this.navCtrl.navigateForward('https://forms.gle/oEaLCBuLqx2rSsar8');
+  // }
 }

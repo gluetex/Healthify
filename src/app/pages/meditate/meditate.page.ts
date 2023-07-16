@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-meditate',
@@ -7,13 +6,30 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./meditate.page.scss'],
 })
 export class MeditatePage implements OnInit {
+  countdown: number = 900; // 15 minutes in seconds
 
-  constructor(private navCtrl: NavController) { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {}
+
+  startTimerAction() {
+    this.startCountdown();
   }
-  goBackAction(){
-    this.navCtrl.navigateForward('/tabs/tab3');
+
+  startCountdown(): void {
+    setInterval(() => {
+      this.countdown--;
+    }, 1000);
   }
 
+  formatCountdownTime(countdown: number): string {
+    const minutes: number = Math.floor(countdown / 60);
+    const seconds: number = countdown % 60;
+
+    return `${this.formatNumber(minutes)}:${this.formatNumber(seconds)}`;
+  }
+
+  formatNumber(value: number): string {
+    return value.toString().padStart(2, '0');
+  }
 }

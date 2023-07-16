@@ -6,8 +6,8 @@ import { MeditatePage } from './meditate.page';
 const routes: Routes = [
   {
     path: '',
-    component: MeditatePage
-  }
+    component: MeditatePage,
+  },
 ];
 
 @NgModule({
