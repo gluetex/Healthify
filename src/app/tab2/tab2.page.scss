@@ -1,53 +1,51 @@
 ion-content {
-  --ion-background-color:#FAEBD7;
+  --ion-background-color: #faebd7;
   padding: 0;
-    margin: 0;
-  }
-  
-  // .image-container {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  //   padding: 0;
-  //   margin: 0;
-  // }
-  
-  // .image-container div {
-  //   flex: 1;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   padding: 0;
-  //   margin: 0;
-  // }
-  
-  // img {
-  //   max-width: 100%;
-  //   max-height: 100%;
-  //   object-fit:fill;
-  //   padding: 0;
-  //   margin: 0;
-  //   transition: transform 0.3s ease-in-out;
-  // }
-  
-  
-  // img:hover {
-  //   transform: scale(1.1);
-  // }
+  margin: 0;
+}
 
+// .image-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 0;
+//   margin: 0;
+// }
 
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-    height: 80vh; /* Set the container height to 100% of viewport height */
-  }
-  
-  ion-button {
-    flex: 1; /* Distribute the available height equally among the buttons */
-  }
-  
-  ion-button {
-    font-size:xx-large; /* Adjust the value as per your requirement */
-  }
+// .image-container div {
+//   flex: 1;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// img {
+//   max-width: 100%;
+//   max-height: 100%;
+//   object-fit:fill;
+//   padding: 0;
+//   margin: 0;
+//   transition: transform 0.3s ease-in-out;
+// }
+
+// img:hover {
+//   transform: scale(1.1);
+// }
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  height: 100vh;
+}
+
+ion-button {
+  flex: 1;
+}
+
+ion-button {
+  font-size: xx-large;
+}
