@@ -20,4 +20,9 @@ export class LoginPagePage implements OnInit {
   resetAction(){
     this.navCtrl.navigateForward('/passwordReset');
   }
+
+  registerAction(){
+    this.navCtrl.navigateForward('/register');
+
+  }
 }

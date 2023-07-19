@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title size="large" class="custom-title">Meditate</ion-title>
     <ion-buttons slot="start">
@@ -19,7 +19,61 @@
       </div>
     </div>
     <div class="meditateButton">
-      <ion-button (click)="startTimerAction()">Start</ion-button>
+      <ion-button class="btnEffect" (click)="startTimerAction(); playMusic()" [disabled]="timerRunning">Start</ion-button>
+      <ion-button class="btnEffect" (click)="stopTimerAction(); stopMusic()" [disabled]="!timerRunning">Stop</ion-button>
+    </div>
+  </div>
+</ion-content>
+ -->
+
+ <!-- <ion-header>
+  <ion-toolbar>
+    <ion-title size="large" class="custom-title">Meditate</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center-container">
+    <div class="circular-timer">
+      <div class="progress-bar" [style.animationDuration]="countdown + 's'"></div>
+      <div class="timer-container">
+        <div class="timer-text">{{ formatCountdownTime(countdown) }}</div>
+      </div>
+    </div>
+    <div class="meditateButton">
+      <ion-button class="btnEffect" (click)="startTimerAction()" [disabled]="timerRunning">Start</ion-button>
+      <ion-button class="btnEffect" (click)="stopTimerAction()" [disabled]="!timerRunning">Stop</ion-button>
+      <ion-button class="btnEffect" (click)="resetTimerAction()">Reset</ion-button>
+    </div>
+  </div>
+</ion-content> -->
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title size="large" class="custom-title">Meditate</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center-container">
+    <div class="circular-timer">
+      <div class="progress-bar"></div>
+      <div class="progress-overlay"></div>
+      <div class="timer-container">
+        <div class="timer-text">{{ formatCountdownTime(countdown) }}</div>
+      </div>
+    </div>
+    <div class="meditateButton">
+      <ion-button class="btnEffect" (click)="startTimerAction()" [disabled]="timerRunning">Start</ion-button>
+      <ion-button class="btnEffect" (click)="stopTimerAction()" [disabled]="!timerRunning">Stop</ion-button>
+      <ion-button class="btnEffect" (click)="resetTimerAction()">Reset</ion-button>
     </div>
   </div>
 </ion-content>

@@ -7,6 +7,29 @@ ion-content{
     
 }
 
+.registerButton{
+  --background: #FAEBD7;
+  color:black;
+  font-weight:lighter;
+  width: 50%;
+  border-radius: 0%;
+  height: 30%;
+  font-size:medium;
+  --border-color:#85b364;
+
+
+}
+.registerButton{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top:1%;
+
+}
+
+
 ion-button{
     --background: #B2D2A4;
 
@@ -17,6 +40,7 @@ ion-button{
     color: black;
     display: flex;
     justify-content: flex-end;
+    font-size: normal;
 }
 
     
@@ -41,11 +65,11 @@ ion-item{
 .logo-container {
     display: flex;
     justify-content: center;
-    margin-top: 15%; /* Adjust the value as needed to position the logo */
+    margin-top: 15%;
   }
   
   .logo {
-    max-width: 200px; /* Adjust the size of the logo as needed */
+    max-width: 200px; 
   }
 
   ion-card-title{
@@ -64,14 +88,16 @@ ion-item{
 
   ion-button.custom-button {
     --background: #B2D2A4;
-    color: #FFFFFF; /* Set the desired text color */
-    outline: none; /* Remove the focus outline */
+    color: #FFFFFF;
+    outline: none; 
   }
   
   ion-button.custom-button:hover,
   ion-button.custom-button:active,
   ion-button.custom-button:focus {
-    --background: #B2D2A4; /* Set the desired background color */
-    color: #FFFFFF; /* Set the desired text color */
-    outline: none; /* Remove the focus outline */
+    --background: #B2D2A4; 
+    color: #FFFFFF; 
+    outline: none; 
   }
+
+  

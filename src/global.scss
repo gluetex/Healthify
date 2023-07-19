@@ -34,6 +34,9 @@ ion-content {
 
 ion-toolbar {
   --background: #b2d2a4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ion-tab-bar {
@@ -61,21 +64,24 @@ body {
   font-style: italic;
 }
 
-.custom-title {
-  font-family: "Playfair Display", serif;
-  text-align: center;
-}
 
 :root {
-  --ion-button-background: #85b364; /* Replace with your desired background color value */
+  --ion-button-background: #85b364; 
 }
 
 ion-button {
   --background: var(--ion-button-background);
-  --background-activated: transparent; /* Disable default background highlight */
-  transition: background-color 0.2s; /* Add a transition effect for background color */
+  --background-activated: transparent; 
+  transition: background-color 0.2s; 
+}
+
+ion-back-button{
+
+  color: white;
+
 }
 
 ion-button:active {
-  background-color: rgba(1, 2, 3, 0.1); /* Set the desired fade color */
+  background-color: rgba(1, 2, 3, 0.1); 
 }
+

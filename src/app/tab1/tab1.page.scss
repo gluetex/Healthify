@@ -8,10 +8,15 @@
   flex: 2;
   padding: 0%;
 }
+.custom-title {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size:xx-large;
+}
 
 ion-card {
   display: flex;
-  align-items: flex-start; /* Adjust alignment as needed */
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   background-color: #fff5c3;

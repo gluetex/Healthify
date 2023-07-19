@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="container">
+    <ion-card class="cardContainer">
+      <div class="inputContainer">
+        <ion-item class="registerInputs">
+          <ion-input type="email" label="Email" labelPlacement="stacked"  placeholder="email@address.com" ></ion-input>
+        </ion-item>
+          <ion-item class="registerInputs">
+            <ion-input type="password" label="Password"  labelPlacement="stacked" placeholder="*****" ></ion-input>
+          </ion-item>
+          <ion-button class="registerBtn" (click)="registerAction()" fill="solid" shape="round">
+            Sign Up
+          </ion-button>
+      </div>
+    
+      <ion-toast [message]="successMessage" *ngIf="showSuccessToast" position="bottom"></ion-toast>
+      <p class="orText">-or-</p>
+      <div class="socialIcons">
+        <ion-icon name="logo-google"  size="large"></ion-icon>
+        <div class="alrUser">
+          <p class="alrUser">Already a user?</p>
+          <ion-button class="alrUser"  (click)="redirectAction()" size="small" fill="clear">Log In</ion-button>
+        </div>
+
+      </div>
+    </ion-card>
+  </div>
+
+
+</ion-content>

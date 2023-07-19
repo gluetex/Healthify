@@ -26,14 +26,21 @@
           shape="round"
         ></ion-textarea>
       </ion-card-content>
+      
       <div class="journalButton">
-        <ion-button expand="block" fill="clear" shape="round"
-          >Don't Save</ion-button
-        >
-        <ion-button expand="block" fill="clear" shape="round">Save</ion-button>
+        <ion-button expand="block" fill="clear" shape="round" (click)="dontSaveAction()">
+          Don't Save
+        </ion-button>
+      
+        <ion-toast [isOpen]="isToastOpen" message="Journal did not save!" [duration]="2000" (didDismiss)="dontSaveAction()"></ion-toast>
+      
+        <ion-button expand="block" fill="clear" shape="round" (click)="saveAction()">
+          Save
+        </ion-button>
+      
+        <ion-toast [isOpen]="isToastOpen" message="Saving..." [duration]="2000" (didDismiss)="saveAction()"></ion-toast>
       </div>
+      
     </ion-card>
   </div>
 </ion-content>
-
-<!-- <ion-toast [message]="successMessage" *ngIf="showSuccessToast" position="middle"></ion-toast> -->

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-journal',
@@ -7,13 +7,28 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./journal.page.scss'],
 })
 export class JournalPage implements OnInit {
+  isToastOpen = false;
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private toastController: ToastController) { }
 
   ngOnInit() {
   }
-  goBackAction(){
-    this.navCtrl.navigateForward('/tabs/tab3');
+
+  async dontSaveAction() {
+    const toast = await this.toastController.create({
+      message: 'Journal did not save!',
+      duration: 2000,
+      position: 'top', // Set the position to 'top'
+    });
+    await toast.present();
   }
 
+  async saveAction() {
+    const toast = await this.toastController.create({
+      message: 'Saving...',
+      duration: 2000,
+      position: 'top', // Set the position to 'top'
+    });
+    await toast.present();
+  }
 }

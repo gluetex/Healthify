@@ -17,7 +17,7 @@ export class Tab3Page {
     this.navCtrl.navigateForward('/journal');
   }
 
-  // navigateToForm() {
-  //   this.navCtrl.navigateForward('https://forms.gle/oEaLCBuLqx2rSsar8');
-  // }
+  navigateToForm() {
+    this.navCtrl.navigateForward('/form');
+  }
 }

@@ -75,10 +75,18 @@ const routes: Routes = [
       import('./pages/meditate/meditate.module').then(
         (m) => m.MeditatePageModule
       ),
-  },  {
+  },
+  {
     path: 'meditate',
     loadChildren: () => import('./pages/meditate/meditate.module').then( m => m.MeditatePageModule)
+  },  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
+
+  
+  
+
 
 ];
 

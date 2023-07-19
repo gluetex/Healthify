@@ -32,6 +32,11 @@
   transform-origin: center;
   animation: countdown-animation linear infinite;
 }
+.custom-title {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size:xx-large;
+}
 
 .timer-container {
   position: relative;
@@ -45,8 +50,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight:lighter;
 }
 
 .meditateButton {
@@ -60,4 +65,12 @@
 
 ion-toolbar {
   --background: #446fa0;
+}
+
+.btnEffect {
+  transition: all 0.3s ease-in-out;
+}
+
+.btnEffect:active {
+  transform: scale(0.95);
 }

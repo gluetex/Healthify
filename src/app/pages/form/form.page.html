@@ -6,5 +6,29 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-<ion-content> </ion-content>
+<ion-content>
+  <div class="container">
+    <div class="question-container">
+      <div class="question" *ngFor="let question of questions">
+        <div *ngIf="question.type === 'multiple-choice'">
+          <h2>{{ question.question }}</h2>
+          <ion-checkbox class="checkbox-wrapper"
+            *ngFor="let choice of question.choices"
+            [checked]="choice === question.answer"
+            (ionChange)="updateAnswer(question, choice)"
+          >
+            {{ choice }}
+          </ion-checkbox>
+        </div>
+        <div *ngIf="question.type === 'input'">
+          <h2>{{ question.question }}</h2>
+          <ion-input
+            [(ngModel)]="question.answer"
+            placeholder="Enter your answer"
+          ></ion-input>
+        </div>
+      </div>
+    </div>
+    <ion-button expand="full" (click)="generateJSONDocument()" shape="round"  class="round-button" >Save</ion-button>
+  </div>
+</ion-content>

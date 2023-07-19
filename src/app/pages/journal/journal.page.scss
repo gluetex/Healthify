@@ -11,6 +11,11 @@ ion-content{
 .cardColor{
     background: white;
 }
+.custom-title {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size:xx-large;
+  }
 
 .header{
 
@@ -39,4 +44,9 @@ height: 70vh;
     ion-button{
         color:white;
     }
+}
+
+.toastBG{
+
+   --background: #000;
 }

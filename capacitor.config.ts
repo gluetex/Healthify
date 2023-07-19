@@ -1,11 +1,22 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.emreertug.app',
+  appId: 'com.healthify.app',
   appName: 'Healthify',
   webDir: 'www',
   server: {
     androidScheme: 'https'
+  },
+  cordova: {
+    preferences: {
+      ScrollEnabled: 'false',
+      BackupWebStorage: 'none',
+      SplashMaintainAspectRatio: 'true',
+      FadeSplashScreenDuration: '300',
+      SplashShowOnlyFirstTime: 'false',
+      SplashScreen: 'screen',
+      SplashScreenDelay: '3000'
+    }
   }
 };
 
