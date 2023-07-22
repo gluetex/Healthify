@@ -1,7 +1,33 @@
+.labelColor {
+  color: #2a2d34;
+}
 
-.labelColor{
+.tabBtn1 {
+  background: rgb(227, 255, 221);
+  background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
+}
 
+.tabBtn2 {
+  background: rgb(215, 231, 250);
+  background: linear-gradient(
+    336deg,
+    rgba(215, 231, 250, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
+}
 
-    color:white;
-
+.tabBtn3 {
+  background: rgb(215, 231, 250);
+  background: linear-gradient(
+    204deg,
+    rgba(215, 231, 250, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
 }

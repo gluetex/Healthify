@@ -28,30 +28,46 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 ion-content {
-  --ion-background-color: white;
-  //heys
+  --background: none;
+  background-image: url("../../Healthify/src/assets/HealthifyBG.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 ion-toolbar {
-  --background: #b2d2a4;
+  --background: rgb(227, 255, 221);
+  --background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 ion-tab-bar {
-  --ion-tab-bar-background: #b2d2a4;
+  --background: rgb(227, 255, 221);
+  --background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
   --ion-tab-bar-color-selected: white;
+  --color: black;
 }
 ion-icon {
-  color: white;
+  color: #2a2d34;
 }
 
 ion-title {
-  color: white;
+  color: #2a2d34;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-style: italic;
   font-weight: lighter;
+  font-size: medium;
 }
 
 ion-item.inputArea ion-label {
@@ -61,27 +77,22 @@ ion-item.inputArea ion-label {
 
 body {
   font-family: "Poppins", sans-serif;
-  font-style: italic;
-}
-
-
-:root {
-  --ion-button-background: #85b364; 
 }
 
 ion-button {
   --background: var(--ion-button-background);
-  --background-activated: transparent; 
-  transition: background-color 0.2s; 
+  --background-activated: transparent;
+  transition: background-color 0.2s;
 }
 
-ion-back-button{
-
-  color: white;
-
+ion-back-button {
+  color: black;
 }
 
 ion-button:active {
-  background-color: rgba(1, 2, 3, 0.1); 
+  background-color: rgba(1, 2, 3, 0.1);
 }
 
+toast-custom-style {
+  --background: #ffcc00; /* Use your desired background color here */
+}

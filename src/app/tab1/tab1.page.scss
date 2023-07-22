@@ -11,7 +11,7 @@
 .custom-title {
   font-family: "Playfair Display", serif;
   text-align: center;
-  font-size:xx-large;
+  font-size: xx-large;
 }
 
 ion-card {
@@ -19,11 +19,15 @@ ion-card {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  background-color: #fff5c3;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 ion-card-content {
   padding: 0;
+}
+
+ion-card-subtitle {
+  color: black;
 }
 
 ion-card-content img {
@@ -38,8 +42,4 @@ ion-card-header {
 .custom-title {
   font-family: "Playfair Display", serif;
   text-align: center;
-}
-
-ion-content {
-  --ion-background-color: #faebd7;
 }

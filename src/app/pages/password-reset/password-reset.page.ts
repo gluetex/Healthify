@@ -8,14 +8,16 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./password-reset.page.scss'],
 })
 export class ResetPasswordPage {
-  email: string='';
+  email: string = '';
   showSuccessToast = false;
   successMessage = 'Password reset email sent.';
 
-  constructor(private router: Router, private toastController: ToastController) {}
+  constructor(
+    private router: Router,
+    private toastController: ToastController
+  ) {}
 
   sendResetEmail() {
-  
     this.showToast();
 
     setTimeout(() => {
@@ -26,7 +28,8 @@ export class ResetPasswordPage {
   async showToast() {
     const toast = await this.toastController.create({
       message: this.successMessage,
-      duration: 2000
+      duration: 2000,
+      color: 'medium',
     });
     toast.present();
   }

@@ -1,103 +1,95 @@
-ion-content{
-
-    --ion-background-color: #B2D2A4;
-    display: flex;
-    align-items: center;
-    justify-content: center
-    
+ion-content {
+  --background: rgb(227, 255, 221);
+  --background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ionCard {
+  background: transparent;
 }
 
-.registerButton{
-  --background: #FAEBD7;
-  color:black;
-  font-weight:lighter;
+.registerButton {
+  --background: white;
+  color: black;
+  font-weight: lighter;
   width: 50%;
   border-radius: 0%;
   height: 30%;
-  font-size:medium;
-  --border-color:#85b364;
-
-
+  font-size: medium;
+  --border-color: #f8c8dc;
 }
-.registerButton{
-
+.registerButton {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-top:1%;
-
+  padding-top: 1%;
 }
 
-
-ion-button{
-    --background: #B2D2A4;
-
-    }
-
- .forgotButton{
-    --background: #FAEBD7;
-    color: black;
-    display: flex;
-    justify-content: flex-end;
-    font-size: normal;
+.forgotButton {
+  --background: white;
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+  font-size: normal;
 }
 
-    
-.ionCard{
-
-    background: #FAEBD7;
-
+.ionCard {
+  background: white;
 }
 
-.inputArea{
-
-    background: #FAEBD7;
-    width: 100%;
-
+.inputArea {
+  background: white;
+  width: 100%;
 }
 
-ion-item{
-    --ion-item-background:#FAEBD7;
-
-
+ion-item {
+  --ion-item-background: white;
 }
 .logo-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 15%;
-  }
-  
-  .logo {
-    max-width: 200px; 
-  }
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
 
-  ion-card-title{
-    font-weight:normal;
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
-    text-align: center;
+.logo {
+  max-width: 30%;
+}
 
-  }
+ion-card-title {
+  font-weight: normal;
+  font-style: italic;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
 
-  ion-button {
-    --background: #B2D2A4;
+ion-button {
+  --background: rgb(227, 255, 221);
+  --background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
+  color: black;
+}
 
-    color: #FFFFFF;
-  }
+ion-button.custom-button {
+  --background: #b2d2a4;
+  color: #ffffff;
+  outline: none;
+}
 
-  ion-button.custom-button {
-    --background: #B2D2A4;
-    color: #FFFFFF;
-    outline: none; 
-  }
-  
-  ion-button.custom-button:hover,
-  ion-button.custom-button:active,
-  ion-button.custom-button:focus {
-    --background: #B2D2A4; 
-    color: #FFFFFF; 
-    outline: none; 
-  }
-
-  
+ion-button.custom-button:hover,
+ion-button.custom-button:active,
+ion-button.custom-button:focus {
+  --background: #b2d2a4;
+  color: #ffffff;
+  outline: none;
+}

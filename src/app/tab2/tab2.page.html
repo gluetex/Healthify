@@ -4,9 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-  <ion-content>
+<!-- <ion-content>
     <div class="button-container">
-      <!-- Place your ion-buttons here -->
       <ion-button class="taskButton" (click)="navigateDailyAction()"
         >Daily Tasks</ion-button
       >
@@ -17,4 +16,50 @@
         >Monthly Tasks</ion-button
       >
     </div>
-  </ion-content>
+  </ion-content> -->
+
+<ion-content>
+  <ion-card class="cardContainer" (click)="navigateToMeditate()">
+    <ion-icon
+      class="iconContainer"
+      src="../../assets/icons/task.svg"
+      size="large"
+    ></ion-icon>
+    <ion-card-header>
+      <ion-card-title class="titleContainer">Tasks</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card class="cardContainer" (click)="navigateToMeditate()">
+    <ion-icon
+      class="iconContainer"
+      src="../../assets/icons/meditate.svg"
+      size="large"
+    ></ion-icon>
+    <ion-card-header>
+      <ion-card-title class="titleContainer">Meditate</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card class="cardContainer" (click)=" navigateToJournal()">
+    <ion-icon
+      class="iconContainer"
+      src="../../assets/icons/journal.svg"
+      size="large"
+    ></ion-icon>
+    <ion-card-header>
+      <ion-card-title class="titleContainer">Journal</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card class="cardContainer" (click)=" navigateToForm()">
+    <ion-icon
+      class="iconContainer"
+      src="../../assets/icons/form.svg"
+      size="large"
+    ></ion-icon>
+    <ion-card-header>
+      <ion-card-title class="titleContainer">Questionnaire</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

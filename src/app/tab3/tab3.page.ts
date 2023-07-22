@@ -9,15 +9,10 @@ import { NavController } from '@ionic/angular';
 export class Tab3Page {
   constructor(private navCtrl: NavController) {}
 
-  navigateToMeditate() {
-    this.navCtrl.navigateForward('/meditate');
-  }
+  isLiked: boolean = false;
 
-  navigateToJournal() {
-    this.navCtrl.navigateForward('/journal');
-  }
-
-  navigateToForm() {
-    this.navCtrl.navigateForward('/form');
+  likeCard() {
+    this.isLiked = !this.isLiked;
+    // Here you can perform any additional actions when the card is liked/unliked
   }
 }

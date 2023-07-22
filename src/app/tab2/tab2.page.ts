@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -10,20 +9,15 @@ import { NavController } from '@ionic/angular';
 export class Tab2Page {
   constructor(private navCtrl: NavController) {}
 
-  navigateDailyAction() {
-
-    this.navCtrl.navigateForward('/daily-task');
+  navigateToMeditate() {
+    this.navCtrl.navigateForward('/meditate');
   }
 
-  navigateWeeklyAction() {
-    // Navigate to Page 2
-    this.navCtrl.navigateForward('/weekly-task');
+  navigateToJournal() {
+    this.navCtrl.navigateForward('/journal');
   }
 
-  navigateMonthlyAction() {
-    // Navigate to Page 3
-    this.navCtrl.navigateForward('/monthly-task');
+  navigateToForm() {
+    this.navCtrl.navigateForward('/form');
   }
-
-  
 }

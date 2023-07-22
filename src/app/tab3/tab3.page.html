@@ -1,18 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="custom-title" size="large">Self Care</ion-title>
+    <ion-title class="custom-title" size="large">Community</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="image-container">
-    <div (click)="navigateToMeditate()">
-      <img src="../../assets/meditation.png" alt="Image 1" />
-    </div>
-    <div (click)="navigateToJournal()">
-      <img src="../../assets/journal.png" alt="Image 2" />
-    </div>
-    <div (click)="navigateToForm()"><img src="../../assets/form.png" alt="Image 3"/>
-    </div>
-  </div>
+  <ion-card>
+    <ion-card-header class="headerContainer">
+      <img class="imageContainer" src="../../assets/userPhoto.jpg" alt="" />
+      <p class="userNameContainer">CutiePatotie</p>
+      <p class="postTime">24h ago</p>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </ion-card-content>
+    <ion-button (click)="likeCard()" [class.liked]="isLiked">
+      <ion-icon
+        slot="icon-only"
+        [name]="isLiked ? 'heart' : 'heart-outline'"
+      ></ion-icon>
+    </ion-button>
+  </ion-card>
 </ion-content>

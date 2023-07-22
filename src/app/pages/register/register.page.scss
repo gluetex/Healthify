@@ -1,84 +1,91 @@
-ion-content{
-  --background: #FAEBD7;
+ion-content {
+  --background: rgb(227, 255, 221);
+  --background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
 }
 
-ion-card{
-  width:100%;
-
+ion-card {
+  width: 100%;
 }
 
-.container{
+.container {
   display: flex;
   width: 100%;
-  margin:0;
+  margin: 0;
 }
 
 .custom-title {
-    font-family: "Playfair Display", serif;
-    text-align: center;
-    font-size:large;
-  }
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size: large;
+}
 
+.cardContainer {
+  padding: 5%;
+  border-radius: 10px;
+}
 
-  .cardContainer{
-    padding: 5%;
-    border-radius: 10px;
+.registerBtn {
+  --color: black;
+  --background: rgb(227, 255, 221);
+  --background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
+  width: 100%;
+}
 
-  }
+.inputContainer {
+  width: 100%;
+}
 
-  .registerBtn{
-    --color: white;
-    --background:#b2d2a4;
+.registerInputs {
+  width: 100%;
+  --border-color: white;
+  margin-top: 5px;
+
+  ion-input {
     width: 100%;
+    border: solid 1px #f8c8dc;
 
+    border-radius: 15px;
   }
+}
 
-  .inputContainer{
-    width: 100%;
+.orText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  ion-icon {
+    color: #f8c8dc;
   }
+}
 
-  .registerInputs{
-    width: 100%;
-    --border-color:white;
-    margin-top:5px;
+.alrUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: normal;
 
-    ion-input{
-      width: 100%;
-      border: solid 1px #b2d2a4;
-
-      border-radius: 15px;
-   }
+  ion-button {
+    color: grey;
+    --background: white;
+    padding: 0%;
   }
-
-  .orText{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size:large;
-  }
-
-  .socialIcons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-      ion-icon{
-        color: #85b364;
-      }
-  }
-
-  .alrUser{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    font-size: normal;
-    
-      ion-button{
-        color:grey;
-        --background: white;
-        padding:0%;
-        
-      }
-  }
+}
