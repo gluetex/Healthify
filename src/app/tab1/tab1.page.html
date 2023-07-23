@@ -17,7 +17,7 @@
       </ion-card>
     </div>
     <div class="column">
-      <ion-card *ngFor="let card of rightFeed">
+      <ion-card *ngFor="let card of rightFeed" href="{{card.link}}">
         <ion-card-content>
           <img [src]="card.image" />
         </ion-card-content>
