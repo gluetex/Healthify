@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="custom-title" size="large">Post</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-textarea
+        [(ngModel)]="textareaContent"
+        (ionChange)="checkWordLimit()"
+        rows="5"
+        placeholder="Write your text here..."
+      ></ion-textarea>
+    </ion-item>
+    <div class="postButton">
+      <ion-button
+        class="click-animation"
+        (click)="postSendAction()"
+        expand="block"
+        fill="solid"
+        shape="round"
+        size="small"
+      >
+        Share
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>

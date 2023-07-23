@@ -11,11 +11,12 @@
 .custom-title {
   font-family: "Playfair Display", serif;
   text-align: center;
-  font-size:xx-large;
+  font-size: xx-large;
 }
+
 .progress-inner {
   height: 100%;
-  background-color: #85b364;
+  background-color: #e597ff;
   transition: width 0.5s ease;
   display: flex;
   align-items: center;
@@ -23,16 +24,22 @@
   color: #fff;
   font-weight: bold;
   border-radius: 20%;
-
 }
 
-ion-content{
+ion-button {
+  color: black;
+  background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
+  border-radius: 15px;
+}
 
-    --ion-background-color: #FAEBD7;
-  
-  
-  }
-  ion-card{
-    --ion-background-color: white;
-  }
-
+ion-content {
+  --ion-background-color: #faebd7;
+}
+ion-card {
+  --ion-background-color: white;
+}

@@ -1,52 +1,53 @@
-ion-card{
-
-    background: white;
-    width: 100%;
-
+ion-card {
+  background: white;
+  width: 100%;
 }
 
-ion-content{
-    --ion-background-color:#FAEBD7;
+ion-content {
+  --ion-background-color: #faebd7;
 }
-.cardColor{
-    background: white;
+.cardColor {
+  background: white;
 }
 .custom-title {
-    font-family: "Playfair Display", serif;
-    text-align: center;
-    font-size:xx-large;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.header {
+  background: #fcbe4f;
+}
+
+.textContainer {
+  height: 70vh;
+  margin-top: 5%;
+}
+
+.cardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.journalButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  ion-button {
+    color: black;
+    --background: rgb(227, 255, 221);
+    --background: linear-gradient(
+      24deg,
+      rgba(227, 255, 221, 1) 0%,
+      rgba(246, 231, 251, 1) 50%,
+      rgba(215, 231, 250, 1) 100%
+    );
   }
-
-.header{
-
-    background: #fcbe4f;
 }
 
-
-.textContainer{
-
-height: 70vh;
-
-}
-
-.cardContainer{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.journalButton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction:row;
-    ion-button{
-        color:white;
-    }
-}
-
-.toastBG{
-
-   --background: #000;
+.toastBG {
+  --background: #000;
 }

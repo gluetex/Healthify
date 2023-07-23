@@ -9,7 +9,6 @@ interface TaskCard {
   image: string;
 }
 
-
 @Component({
   selector: 'app-weekly-task',
   templateUrl: './weekly-task.page.html',
@@ -17,38 +16,38 @@ interface TaskCard {
 })
 export class WeeklyTaskPage implements OnInit {
   progress: number = 0;
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  goBackAction(){
+  goBackAction() {
     this.navCtrl.navigateForward('/tabs/tab2');
   }
 
   taskCards: TaskCard[] = [
     {
       title: 'Stay In Touch ',
-      description: 'Spend time in nature, whether it is going for a hike, visiting a park, or gardening.',
+      description:
+        'Spend time in nature, whether it is going for a hike, visiting a park, or gardening.',
       requiredPresses: 1,
       currentPresses: 0,
-      image: '../../assets/natureTask.jpg'
+      image: '../../assets/TaskImages/natureTask.jpg',
     },
     {
       title: 'Be Kind',
       description: 'Engage in a random act of kindness for someone else.',
       requiredPresses: 1,
       currentPresses: 0,
-      image: '../../assets/kindnessTask.jpg'
+      image: '../../assets/TaskImages/kindnessTask.jpg',
     },
     {
       title: 'Meet Up!',
-      description: 'Engage in a social outing or activity, such as meeting a friend for coffee or attending a social event.',
+      description:
+        'Engage in a social outing or activity, such as meeting a friend for coffee or attending a social event.',
       requiredPresses: 1,
       currentPresses: 0,
-      image: '../../assets/friendsTask.jpg'
-    }
-
+      image: '../../assets/TaskImages/friendsTask.jpg',
+    },
   ];
 
   onCardButtonClick(card: TaskCard) {
@@ -59,7 +58,9 @@ export class WeeklyTaskPage implements OnInit {
   }
 
   getProgressPercentage(card: TaskCard): string {
-    const progressPercentage = Math.round((card.currentPresses / card.requiredPresses) * 100);
+    const progressPercentage = Math.round(
+      (card.currentPresses / card.requiredPresses) * 100
+    );
     return `${progressPercentage}%`;
   }
 
@@ -75,5 +76,4 @@ export class WeeklyTaskPage implements OnInit {
 
     this.progress = Math.round((completedTasks / totalTasks) * 100);
   }
-
 }

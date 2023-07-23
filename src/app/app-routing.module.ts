@@ -83,6 +83,14 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'post',
+    loadChildren: () => import('./pages/post/post.module').then( m => m.PostPageModule)
+  },
+  {
+    path: 'task-route',
+    loadChildren: () => import('./pages/task-route/task-route.module').then( m => m.TaskRoutePageModule)
+  },
 
   
   

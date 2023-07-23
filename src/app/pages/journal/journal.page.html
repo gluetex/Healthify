@@ -11,7 +11,7 @@
   <div class="cardContainer">
     <ion-card>
       <ion-card-header class="header">
-        <ion-card-subtitle class="custom-title" color="dark"
+        <ion-card-subtitle class="journalTitle" color="dark"
           >What's On Your Mind</ion-card-subtitle
         >
       </ion-card-header>
@@ -26,21 +26,40 @@
           shape="round"
         ></ion-textarea>
       </ion-card-content>
-      
+
       <div class="journalButton">
-        <ion-button expand="block" fill="clear" shape="round" (click)="dontSaveAction()">
+        <ion-button
+          expand="block"
+          fill="clear"
+          shape="round"
+          (click)="dontSaveAction()"
+        >
           Don't Save
         </ion-button>
-      
-        <ion-toast [isOpen]="isToastOpen" message="Journal did not save!" [duration]="2000" (didDismiss)="dontSaveAction()"></ion-toast>
-      
-        <ion-button expand="block" fill="clear" shape="round" (click)="saveAction()">
+
+        <ion-toast
+          [isOpen]="isToastOpen"
+          message="Journal did not save!"
+          [duration]="2000"
+          (didDismiss)="dontSaveAction()"
+        ></ion-toast>
+
+        <ion-button
+          expand="block"
+          fill="clear"
+          shape="round"
+          (click)="saveAction()"
+        >
           Save
         </ion-button>
-      
-        <ion-toast [isOpen]="isToastOpen" message="Saving..." [duration]="2000" (didDismiss)="saveAction()"></ion-toast>
+
+        <ion-toast
+          [isOpen]="isToastOpen"
+          message="Saving..."
+          [duration]="2000"
+          (didDismiss)="saveAction()"
+        ></ion-toast>
       </div>
-      
     </ion-card>
   </div>
 </ion-content>

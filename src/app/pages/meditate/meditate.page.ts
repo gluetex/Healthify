@@ -14,7 +14,7 @@ export class MeditatePage implements OnDestroy {
 
   constructor() {
     this.sound = new Howl({
-      src: ['../../assets/meditationMusic.mp3'],
+      src: ['../../assets/MeditationMusic/meditationMusic.mp3'],
     });
   }
 
@@ -32,12 +32,12 @@ export class MeditatePage implements OnDestroy {
 
   startTimerAction() {
     this.startCountdown();
-    this.playMusic(); // Added line to play music
+    this.playMusic();
     this.timerRunning = true;
   }
 
   stopTimerAction() {
-    this.stopMusic(); // Added line to stop music
+    this.stopMusic();
     this.timerRunning = false;
     this.clearInterval();
   }

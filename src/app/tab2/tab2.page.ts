@@ -9,6 +9,10 @@ import { NavController } from '@ionic/angular';
 export class Tab2Page {
   constructor(private navCtrl: NavController) {}
 
+  navigateToTasks() {
+    this.navCtrl.navigateForward('/task-route');
+  }
+
   navigateToMeditate() {
     this.navCtrl.navigateForward('/meditate');
   }

@@ -1,20 +1,28 @@
+ion-content {
+  --background: rgb(125, 184, 255);
+  --background: linear-gradient(
+    336deg,
+    rgba(125, 184, 255, 1) 0%,
+    rgba(208, 153, 227, 1) 51%,
+    rgba(215, 250, 245, 1) 100%
+  );
+}
 .center-container {
+  margin-top: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-image: url("https://media.giphy.com/media/HRXnPYf10Zx0wz4alF/giphy.gif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  // background-image: url("https://media.giphy.com/media/HRXnPYf10Zx0wz4alF/giphy.gif");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
 }
 .circular-timer {
   position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: #446fa0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,14 +36,20 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #446fa0;
+  background: rgb(227, 255, 221);
+  background: linear-gradient(
+    24deg,
+    rgba(227, 255, 221, 1) 0%,
+    rgba(246, 231, 251, 1) 50%,
+    rgba(215, 231, 250, 1) 100%
+  );
   transform-origin: center;
   animation: countdown-animation linear infinite;
 }
 .custom-title {
   font-family: "Playfair Display", serif;
   text-align: center;
-  font-size:xx-large;
+  font-size: xx-large;
 }
 
 .timer-container {
@@ -51,20 +65,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
-  font-weight:lighter;
+  font-weight: lighter;
+  color: black;
 }
 
 .meditateButton {
   margin-top: 16px;
-  --ion-color-primary: red;
 }
-
 .meditateButton ion-button {
-  --background: #446fa0;
-}
-
-ion-toolbar {
-  --background: #446fa0;
+  --background: #f7deff;
+  color: black;
 }
 
 .btnEffect {

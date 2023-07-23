@@ -33,10 +33,15 @@ img {
   margin-left: 25%;
 }
 
-ion-button {
-  --color: #ff4081; /* Change to your desired color */
+ion-fab-button {
+  --background: linear-gradient(
+    336deg,
+    rgba(215, 231, 250, 1) 0%,
+    rgba(241, 201, 255, 1) 50%,
+    rgba(215, 250, 245, 1) 100%
+  );
 }
 
-ion-button.liked {
-  color: #ff4081; /* Red color for the liked button */
+ion-button {
+  background: transparent;
 }

@@ -1,28 +1,15 @@
-// ion-content {
-//   --ion-background-color: #faebd7;
-//   padding: 0;
-//   margin: 0;
-// }
-
 .custom-title {
   font-family: "Playfair Display", serif;
   text-align: center;
   font-size: xx-large;
 }
-// .button-container {
-//   display: flex;
-//   flex-direction: column;
-//   padding: 5%;
-//   height: 100vh;
-// }
 
-// ion-button {
-//   flex: 1;
-// }
-
-// ion-button {
-//   font-size: xx-large;
-// }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 ion-icon {
   color: black;

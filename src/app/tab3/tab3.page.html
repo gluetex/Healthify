@@ -5,24 +5,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card *ngFor="let card of postCards">
     <ion-card-header class="headerContainer">
-      <img class="imageContainer" src="../../assets/userPhoto.jpg" alt="" />
-      <p class="userNameContainer">CutiePatotie</p>
-      <p class="postTime">24h ago</p>
+      <img class="imageContainer" [src]="card.image" />
+      <p class="userNameContainer">{{card.writer}}</p>
+      <p class="postTime">{{card.time}}</p>
     </ion-card-header>
-    <ion-card-content>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.
-    </ion-card-content>
-    <ion-button (click)="likeCard()" [class.liked]="isLiked">
+    <ion-card-content> {{card.content}} </ion-card-content>
+    <ion-button (click)="likeCard(card)" [class.liked]="card.isLiked">
       <ion-icon
         slot="icon-only"
-        [name]="isLiked ? 'heart' : 'heart-outline'"
+        [name]="card.isLiked ? 'heart' : 'heart-outline'"
       ></ion-icon>
     </ion-button>
   </ion-card>
+
+  <ion-fab
+    slot="fixed"
+    vertical="bottom"
+    horizontal="end"
+    (click)="postAction()"
+  >
+    <ion-fab-button>
+      <ion-icon name="pencil-outline"></ion-icon> </ion-fab-button
+  ></ion-fab>
 </ion-content>

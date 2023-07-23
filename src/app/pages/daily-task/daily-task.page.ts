@@ -31,21 +31,23 @@ export class DailyTaskPage implements OnInit {
       description: 'Have a conversation with 3 strangers today',
       requiredPresses: 3,
       currentPresses: 0,
-      image: '../../assets/taskTalk.jpg',
+      image: '../../assets/TaskImages/taskTalk.jpg',
     },
     {
       title: 'Take a Breath',
-      description: 'Practice five minutes of deep breathing or meditation in the morning and evening.',
+      description:
+        'Practice five minutes of deep breathing or meditation in the morning and evening.',
       requiredPresses: 2,
       currentPresses: 0,
-      image: '../../assets/breathTask.jpg',
+      image: '../../assets/TaskImages/breathTask.jpg',
     },
     {
       title: 'Move',
-      description: 'Engage in at least 30 minutes of physical exercise, such as walking, jogging, or cycling.',
+      description:
+        'Engage in at least 30 minutes of physical exercise, such as walking, jogging, or cycling.',
       requiredPresses: 1,
       currentPresses: 0,
-      image: '../../assets/exerciseTask.jpg',
+      image: '../../assets/TaskImages/exerciseTask.jpg',
     },
   ];
 
@@ -57,7 +59,9 @@ export class DailyTaskPage implements OnInit {
   }
 
   getProgressPercentage(card: TaskCard): string {
-    const progressPercentage = Math.round((card.currentPresses / card.requiredPresses) * 100);
+    const progressPercentage = Math.round(
+      (card.currentPresses / card.requiredPresses) * 100
+    );
     return `${progressPercentage}%`;
   }
 
