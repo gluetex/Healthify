@@ -50,52 +50,56 @@
 </ion-header>
 
 <ion-content>
-  <div class="container">
-    <div class="question-container">
-      <div class="question" *ngIf="currentQuestion">
-        <div *ngIf="currentQuestion.type === 'multiple-choice'">
-          <h2>{{ currentQuestion.question }}</h2>
-          <ion-checkbox
-            class="checkbox-wrapper"
-            *ngFor="let choice of currentQuestion.choices"
-            [checked]="choice === currentQuestion.answer"
-            (ionChange)="updateAnswer(currentQuestion, choice)"
-          >
-            {{ choice }}
-          </ion-checkbox>
+  <div class="cardContainer">
+    <ion-card>
+      <div class="container">
+        <div class="question-container">
+          <div class="question" *ngIf="currentQuestion">
+            <div *ngIf="currentQuestion.type === 'multiple-choice'">
+              <h2>{{ currentQuestion.question }}</h2>
+              <ion-checkbox
+                class="checkbox-wrapper"
+                *ngFor="let choice of currentQuestion.choices"
+                [checked]="choice === currentQuestion.answer"
+                (ionChange)="updateAnswer(currentQuestion, choice)"
+              >
+                {{ choice }}
+              </ion-checkbox>
+            </div>
+            <div *ngIf="currentQuestion.type === 'input'">
+              <h2>{{ currentQuestion.question }}</h2>
+              <ion-input
+                [(ngModel)]="currentQuestion.answer"
+                placeholder="Enter your answer"
+              ></ion-input>
+            </div>
+            <ion-button
+              expand="full"
+              (click)="loadNextQuestion()"
+              shape="round"
+              class="round-button"
+            >
+              Next
+            </ion-button>
+          </div>
+          <div class="question" *ngIf="!currentQuestion">
+            <h2>Questionnaire Completed</h2>
+          </div>
         </div>
-        <div *ngIf="currentQuestion.type === 'input'">
-          <h2>{{ currentQuestion.question }}</h2>
-          <ion-input
-            [(ngModel)]="currentQuestion.answer"
-            placeholder="Enter your answer"
-          ></ion-input>
-        </div>
-        <ion-button
-          expand="full"
-          (click)="loadNextQuestion()"
-          shape="round"
-          class="round-button"
-        >
-          Next
-        </ion-button>
       </div>
-      <div class="question" *ngIf="!currentQuestion">
-        <h2>Questionnaire Completed</h2>
-      </div>
-    </div>
+    </ion-card>
   </div>
 </ion-content>
 
 <ion-footer>
   <div class="question" *ngIf="!currentQuestion">
     <ion-button
-      (click)="resetQuestionnaire(); goBackAction()"
+      (click)="resetQuestionnaire(); goBackAction(); generateJSONDocument()"
       expand="block"
       fill="clear"
       shape="round"
     >
-      Return Home Page
+      Finish
     </ion-button>
   </div>
 </ion-footer>

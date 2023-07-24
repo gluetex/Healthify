@@ -70,7 +70,7 @@ ion-card-title {
 }
 
 ion-button {
-  --background: rgb(227, 255, 221);
+  --background: none;
   --background: linear-gradient(
     24deg,
     rgba(227, 255, 221, 1) 0%,
@@ -80,15 +80,9 @@ ion-button {
   color: black;
 }
 
-ion-button.custom-button {
-  --background: #b2d2a4;
-  color: #ffffff;
-  outline: none;
-}
 
-ion-button.custom-button:hover,
-ion-button.custom-button:active,
-ion-button.custom-button:focus {
+
+ion-button.custom-button {
   --background: #b2d2a4;
   color: #ffffff;
   outline: none;

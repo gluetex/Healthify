@@ -7,25 +7,24 @@
 </ion-header>
 
 <ion-content class="container">
-  <ion-card class="cardContainer" (click)="dailyTaskAction()">
-    <ion-icon name="chevron-forward-outline" size="large"></ion-icon>
-    <ion-card-header>
-      <ion-card-title class="titleContainer">Daily Tasks</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-  <ion-card class="cardContainer" (click)="weeklyTaskAction()">
-    <ion-icon name="chevron-forward-outline" size="large"></ion-icon>
-    <ion-card-header>
-      <ion-card-title class="titleContainer">Weekly Tasks</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-  <ion-card class="cardContainer" (click)="monthlyTaskAction()">
-    <ion-icon name="chevron-forward-outline" size="large"></ion-icon>
-
-    <ion-card-header>
-      <ion-card-title class="titleContainer">Monthly Tasks</ion-card-title>
-    </ion-card-header>
-  </ion-card>
+  <div class="container">
+    <ion-card class="cardContainer" (click)="dailyTaskAction()">
+      <ion-icon name="chevron-forward-outline" size="large"></ion-icon>
+      <ion-card-header>
+        <ion-card-title class="titleContainer">Daily Tasks</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="cardContainer" (click)="weeklyTaskAction()">
+      <ion-icon name="chevron-forward-outline" size="large"></ion-icon>
+      <ion-card-header>
+        <ion-card-title class="titleContainer">Weekly Tasks</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="cardContainer" (click)="monthlyTaskAction()">
+      <ion-icon name="chevron-forward-outline" size="large"></ion-icon>
+      <ion-card-header>
+        <ion-card-title class="titleContainer">Monthly Tasks</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
 </ion-content>

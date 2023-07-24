@@ -12,7 +12,7 @@
       <p class="postTime">{{card.time}}</p>
     </ion-card-header>
     <ion-card-content> {{card.content}} </ion-card-content>
-    <ion-button (click)="likeCard(card)" [class.liked]="card.isLiked">
+    <ion-button (click)="likeCard(card)" [class.liked]="card.isLiked" size="medium">
       <ion-icon
         slot="icon-only"
         [name]="card.isLiked ? 'heart' : 'heart-outline'"

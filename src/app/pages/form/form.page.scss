@@ -67,3 +67,17 @@ ion-footer {
     rgba(215, 250, 245, 1) 100%
   );
 }
+
+ion-card{
+  width: 100%;
+  font-size: small;
+}
+
+.cardContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+}
