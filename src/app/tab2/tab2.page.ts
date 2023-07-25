@@ -24,4 +24,8 @@ export class Tab2Page {
   navigateToForm() {
     this.navCtrl.navigateForward('/form');
   }
+
+  navigateToPedometer() {
+    this.navCtrl.navigateForward('/stepcounter');
+  }
 }

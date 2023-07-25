@@ -79,7 +79,8 @@ const routes: Routes = [
   {
     path: 'meditate',
     loadChildren: () => import('./pages/meditate/meditate.module').then( m => m.MeditatePageModule)
-  },  {
+  },
+  {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
@@ -90,6 +91,10 @@ const routes: Routes = [
   {
     path: 'task-route',
     loadChildren: () => import('./pages/task-route/task-route.module').then( m => m.TaskRoutePageModule)
+  },
+  {
+    path: 'stepcounter',
+    loadChildren: () => import('./pages/stepcounter/stepcounter.module').then( m => m.StepcounterPageModule)
   },
 
   
