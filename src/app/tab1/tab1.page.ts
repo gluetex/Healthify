@@ -90,4 +90,10 @@ export class Tab1Page {
       link: 'https://adhd-women.eu/blog/this-is-my-adhd-story-literally/',
     },
   ];
+
+
+  settingAction(){
+    this.navCtrl.navigateForward('/settings');
+  }
+
 }

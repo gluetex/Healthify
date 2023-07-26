@@ -1,0 +1,99 @@
+.custom-title {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: xx-large;
+  }
+ion-content{
+    top:0;
+    margin-top:0;
+}
+  ion-card {
+    padding:0%;
+    width: 100%;
+    margin-left:0;
+    margin-top:0;
+
+  }
+
+.cardContainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    padding:0%;
+    width: 100%;
+    margin-left:0;
+    
+}
+
+img{
+    width:40%;
+    border-radius:100%;
+}
+
+
+h1{
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: normal;
+    color:black;
+}
+
+p{
+    font-style: italic;
+    color:black;
+}
+
+.userNameContainer {
+    margin-left: 5%;
+    font-weight: bold;
+    font-size: medium;
+  }
+  .postTime {
+    margin-left: 25%;
+  }
+
+  .imageBox{
+    width:10%;
+  }
+
+.image{
+    width:15%;
+}
+
+  
+.headerContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.postContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.postSection{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.profileCardContainer{
+
+    background: rgb(215, 231, 250);
+    background: linear-gradient(
+      204deg,
+      rgba(215, 231, 250, 1) 0%,
+      rgba(246, 231, 251, 1) 50%,
+      rgba(215, 231, 250, 1) 100%
+    );
+}
+
