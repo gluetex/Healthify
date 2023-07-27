@@ -6,9 +6,11 @@ ion-card {
 ion-content {
   --ion-background-color: #faebd7;
 }
+
 .cardColor {
   background: white;
 }
+
 .custom-title {
   font-family: "Playfair Display", serif;
   text-align: center;
@@ -20,7 +22,6 @@ ion-content {
 }
 
 .textContainer {
-  height: 70vh;
   margin-top: 5%;
 }
 
@@ -36,6 +37,7 @@ ion-content {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+
   ion-button {
     color: black;
     --background: rgb(227, 255, 221);

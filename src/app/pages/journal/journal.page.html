@@ -11,19 +11,15 @@
   <div class="cardContainer">
     <ion-card>
       <ion-card-header class="header">
-        <ion-card-subtitle class="journalTitle" color="dark"
-          >What's On Your Mind</ion-card-subtitle
-        >
+        <ion-card-subtitle class="journalTitle" color="dark">What's On Your Mind</ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content class="cardColor">
         <ion-textarea
-          class="textContainer"
-          label=""
-          labelPlacement="floating"
-          fill="outline"
+          [(ngModel)]="journalContent"
           placeholder="Enter text"
-          shape="round"
+          rows="15"
+          class="textContainer"
         ></ion-textarea>
       </ion-card-content>
 
