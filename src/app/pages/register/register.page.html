@@ -11,10 +11,10 @@
     <ion-card class="cardContainer">
       <div class="inputContainer">
         <ion-item class="registerInputs">
-          <ion-input type="email" label="Email" labelPlacement="stacked"  placeholder="email@address.com" ></ion-input>
+          <ion-input type="email" label="email" labelPlacement="stacked"  placeholder="email@address.com" [(ngModel)]="email"></ion-input>
         </ion-item>
           <ion-item class="registerInputs">
-            <ion-input type="password" label="Password"  labelPlacement="stacked" placeholder="*****" ></ion-input>
+            <ion-input type="password" label="password"  labelPlacement="stacked" placeholder="*****"  [(ngModel)]="password"></ion-input>
           </ion-item>
           <ion-button class="registerBtn" (click)="registerAction()" fill="solid" shape="round">
             Sign Up

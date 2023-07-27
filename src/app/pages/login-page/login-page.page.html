@@ -16,18 +16,20 @@
         <ion-item class="inputArea">
           <ion-input
             type="email"
-            label="Email"
+            label="email"
             labelPlacement="floating"
             placeholder="email@address.com"
+            [(ngModel)]="email"
           ></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-input
             type="password"
-            label="Password"
+            label="password"
             labelPlacement="floating"
             placeholder="*******"
+            [(ngModel)]="password"
           ></ion-input>
         </ion-item>
         <ion-button

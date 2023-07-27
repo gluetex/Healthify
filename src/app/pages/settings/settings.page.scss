@@ -1,0 +1,35 @@
+.custom-title {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: xx-large;
+  }
+  ion-toggle{
+    display:flex;
+    justify-content:space-between;
+    font-size: large;
+  }
+
+  p{
+    font-size: large;
+  }
+
+  ion-card{
+
+    height:10%;
+  }
+
+ 
+
+  .cardContainer{
+    display:flex;
+    align-items: center;
+
+
+  }
+
+ .contentContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+ }

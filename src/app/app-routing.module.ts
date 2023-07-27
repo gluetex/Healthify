@@ -95,7 +95,8 @@ const routes: Routes = [
   {
     path: 'stepcounter',
     loadChildren: () => import('./pages/stepcounter/stepcounter.module').then( m => m.StepcounterPageModule)
-  },  {
+  },
+  {
     path: 'settings',
     loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
   },
@@ -103,7 +104,7 @@ const routes: Routes = [
     path: 'tab4',
     loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
   },
-
+ 
 
   
   

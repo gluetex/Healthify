@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import {
+  Auth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut
+} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-register',
@@ -10,7 +16,9 @@ import { NavController } from '@ionic/angular';
 })
 export class RegisterPage implements OnInit {
 
-  constructor(private router: Router, private toastController: ToastController, private navCtrl: NavController) { }
+  email!: string;
+  password!: string;
+  constructor(private router: Router, private toastController: ToastController, private navCtrl: NavController, private auth: Auth) { }
 
   isToastOpen=false;
   showSuccessToast = false;
@@ -18,23 +26,15 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
-  registerAction(){
+ 
+  async registerAction(){
 
-    this.showToast();
-
-setTimeout(()=>{
-  this.router.navigate(['/login']);
-}, 3000);
-
-  }
-
- async showToast(){
-  const toast=await this.toastController.create({
-    message: this.successMessage,
-    duration:3000
-  });
-  toast.present();
-
+    const user = await createUserWithEmailAndPassword(
+      this.auth,
+      this.email,
+      this.password
+      );
+    return user;
   }
 
   redirectAction(){

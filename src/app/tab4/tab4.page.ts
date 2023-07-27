@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{NavController} from '@ionic/angular';
 
 interface postCard {
   image: string;
@@ -14,7 +15,7 @@ interface postCard {
 })
 export class Tab4Page implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
@@ -44,4 +45,8 @@ export class Tab4Page implements OnInit {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl.',
     },
   ];
+
+  settingsAction(){
+    this.navCtrl.navigateForward('/settings');
+  }
 }
