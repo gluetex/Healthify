@@ -5,7 +5,7 @@ import { DeviceMotion } from '@awesome-cordova-plugins/device-motion/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from "@angular/fire/auth";
@@ -25,13 +25,13 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, provideFirebaseApp(() => initializeApp(firebaseConfig)),
+  imports: [AngularFireAuthModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, provideFirebaseApp(() => initializeApp(firebaseConfig)),
      provideAuth(() => getAuth()), provideFirestore(() => getFirestore()),
       provideStorage(() => getStorage()),
-    
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },DeviceMotion],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

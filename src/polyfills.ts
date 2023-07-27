@@ -43,7 +43,8 @@
  */
  
 import './zone-flags';
-
+import 'firebase/auth';
+import 'firebase/firestore';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
