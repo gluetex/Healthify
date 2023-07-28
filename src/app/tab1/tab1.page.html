@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar> 
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -32,4 +32,38 @@
   </div>
 </ion-content>
 
+ -->
 
+ <ion-header>
+  <ion-toolbar> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title size="large" class="custom-title">Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="column">
+      <ion-card *ngFor="let card of leftFeed" href="{{card.link}}">
+        <ion-card-content>
+          <img [src]="card.image" />
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-subtitle>{{card.description}}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div class="column">
+      <ion-card *ngFor="let card of rightFeed" href="{{card.link}}">
+        <ion-card-content>
+          <img [src]="card.image" />
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-subtitle>{{card.description}}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
