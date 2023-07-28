@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { ToastController, LoadingController, AlertController  } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-reset-password',
@@ -8,28 +9,48 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./password-reset.page.scss'],
 })
 export class ResetPasswordPage {
-  email: string = '';
+  email!: string 
   showSuccessToast = false;
   successMessage = 'Password reset email sent.';
+  error: any;
 
   constructor(
+    private fireauth: AngularFireAuth,
     private router: Router,
-    private toastController: ToastController
+    private toastController: ToastController,
+    public loadingController: LoadingController,
+    public alertController: AlertController
   ) {}
 
-  sendResetEmail() {
-    this.showToast();
-
-    setTimeout(() => {
-      this.router.navigate(['/login']);
-    }, 2000);
+  async openLoader() {
+    const loading = await this.loadingController.create({
+      message: 'Please Wait ...',
+      duration: 2000
+    });
+    await loading.present();
+  }
+  async closeLoading() {
+    return await this.loadingController.dismiss();
   }
 
-  async showToast() {
+  sendResetEmail() {
+    this.fireauth.sendPasswordResetEmail(this.email)
+      .then(data => {
+        console.log(data);
+        this.presentToast();
+        this.router.navigateByUrl('/login');
+      })
+      .catch(err => {
+        console.log(` failed ${err}`);
+        this.error = err.message;
+      });
+  }
+
+  async presentToast() {
     const toast = await this.toastController.create({
-      message: this.successMessage,
+      message:'Password reset email sent',
       duration: 2000,
-      color: 'medium',
+      position: 'bottom',
     });
     toast.present();
   }

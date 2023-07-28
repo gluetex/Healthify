@@ -10,6 +10,8 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from "@angular/fire/auth";
 import { provideStorage, getStorage } from "@angular/fire/storage";
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAhwUQ4dyWspAU53ErwArgyXhl-ZzZNw2I",
@@ -29,7 +31,7 @@ const firebaseConfig = {
      provideAuth(() => getAuth()), provideFirestore(() => getFirestore()),
       provideStorage(() => getStorage()),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },DeviceMotion],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },DeviceMotion,  { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })

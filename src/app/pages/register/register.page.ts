@@ -34,12 +34,24 @@ export class RegisterPage implements OnInit {
       this.email,
       this.password
       );
+      this.presentToast('Signup success');
+      this.navCtrl.navigateForward('/login');
     return user;
+   
   }
 
   redirectAction(){
     this.navCtrl.navigateForward('/login');
     }
 
+    async presentToast(message: string) {
+      const toast = await this.toastController.create({
+        message: message,
+        duration: 1000,
+        position: 'bottom',
+      });
+      toast.present();
+    }
+  
 }
 
