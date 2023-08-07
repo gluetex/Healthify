@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import{NavController} from '@ionic/angular';
+import{ NavController } from '@ionic/angular';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { query, collection, where, getDocs } from 'firebase/firestore';
 
 interface postCard {
   image: string;
@@ -14,39 +18,50 @@ interface postCard {
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page implements OnInit {
+  public community: postCard[] = [];
+  private db: any;
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController) {
+    const firebaseConfig = {
+      apiKey: "AIzaSyAhwUQ4dyWspAU53ErwArgyXhl-ZzZNw2I",
+      authDomain: "healthify-78015.firebaseapp.com",
+      projectId: "healthify-78015",
+      storageBucket: "healthify-78015.appspot.com",
+      messagingSenderId: "307872925519",
+      appId: "1:307872925519:web:74d67cc5cbf3091704a73a",
+      measurementId: "G-09F20RSR0T" 
+    };
+
+    const app = initializeApp(firebaseConfig);
+    this.db = getFirestore(app);
+
+    onAuthStateChanged(getAuth(app), (user) => {
+      if (user) {
+        const userId = user.uid;
+        this.fetchData(userId);
+      }
+    });
+  }
 
   ngOnInit() {
   }
 
-  postCards: postCard[] = [
-    {
-      writer: 'John Doe',
-      image: '../../assets/UserPhotos/userPhoto.jpg',
-      time: '2h ago',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl.',
-    },
-
-    {
-      writer: 'John Doe',
-      image: '../../assets/UserPhotos/userPhoto.jpg',
-      time: '2h ago',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam',
-    },
-
-    {
-      writer: 'John Doe',
-      image: '../../assets/UserPhotos/userPhoto.jpg',
-      time: '2h ago',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl.',
-    },
-  ];
+  async fetchData(userId: string) {
+    try {
+      const userDocumentRef = doc(this.db, "users", userId);
+      const userSnapshot = await getDoc(userDocumentRef);
+  
+      if (userSnapshot.exists()) {
+        this.community = userSnapshot.data()['posts'] as postCard[];
+      }
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+    }
+  }
 
   settingsAction(){
     this.navCtrl.navigateForward('/settings');
   }
+
+  
 }

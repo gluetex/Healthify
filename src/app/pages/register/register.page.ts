@@ -17,7 +17,7 @@ import { initializeApp } from 'firebase/app';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-
+  username!: string;
   email!: string;
   password!: string;
   private db: any;
@@ -48,24 +48,34 @@ export class RegisterPage implements OnInit {
   }
 
   async registerAction() {
-    const user = await createUserWithEmailAndPassword(
-      this.auth,
-      this.email,
-      this.password
-    );
-  
-    const userDetail = {
-      email: this.email,
-    };
-  
-    const emailId = this.email.split('@')[0];  // This will split the email by '@' and take the first part.
-    const userRef = doc(this.db, "users", emailId);
-    const res = await setDoc(userRef, userDetail);
-  
-    this.presentToast('Signup success');
-    this.navCtrl.navigateForward('/login');
-    return user;
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        this.auth,
+        this.email,
+        this.password
+      );
+      
+      const userId = userCredential.user.uid; // Getting user ID
+      
+      const userDetail = {
+        email: this.email,
+        username: this.username,
+        posts: [] // Initializing an empty posts array
+      };
+      
+      const userRef = doc(this.db, "users", userId); // Using user ID as the document name
+      await setDoc(userRef, userDetail);
+      
+      this.presentToast('Signup success');
+      this.navCtrl.navigateForward('/login');
+      return userCredential;
+    } catch (error) {
+      console.error("Error during registration:", error);
+      this.presentToast('Signup failed'); // Modify the message based on your needs
+      return null;
+    }
   }
+
   
 
   redirectAction(){
