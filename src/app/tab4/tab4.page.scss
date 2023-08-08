@@ -6,6 +6,7 @@
 ion-content{
     top:0;
     margin-top:0;
+    
 }
   ion-card {
     padding:0%;
@@ -28,6 +29,18 @@ ion-content{
     width: 100%;
     margin-left:0;
     
+}
+
+.headerMargin{
+
+  display: flex;
+  flex-direction: row;
+  gap:15px;
+
+  img{
+    width:20%;
+  }
+
 }
 
 img{
@@ -72,7 +85,6 @@ p{
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: start;
 }
 
 .postContainer{

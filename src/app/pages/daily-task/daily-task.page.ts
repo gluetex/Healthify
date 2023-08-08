@@ -78,3 +78,4 @@ export class DailyTaskPage implements OnInit {
     this.progress = Math.round((completedTasks / totalTasks) * 100);
   }
 }
+

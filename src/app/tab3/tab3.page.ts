@@ -38,6 +38,7 @@ export class Tab3Page {
 
   }
 
+
   ngOnInit() {
     this.fetchData();
   }
@@ -85,4 +86,5 @@ export class Tab3Page {
   postAction() {
     this.navCtrl.navigateForward('/post');
   }
+  
 }

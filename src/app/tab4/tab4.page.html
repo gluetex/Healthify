@@ -20,8 +20,10 @@
   <div class="postSection">
     <ion-card class="postContainer" *ngFor="let card of community">
       <ion-card-header class="headerContainer">
-        <img class="image" [src]="card.avatar" /> <!-- use the avatar URL -->
-        <p class="userNameContainer">{{card.writer}}</p>
+        <div class="headerMargin">
+          <img class="image" [src]="card.avatar" /> <!-- use the avatar URL -->
+          <p class="userNameContainer">{{card.writer}}</p>
+        </div>
         <p class="postTime">{{card.time}}</p>
       </ion-card-header>
       <ion-card-content> {{card.content}} </ion-card-content>
