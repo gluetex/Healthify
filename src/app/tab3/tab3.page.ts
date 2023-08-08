@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, setDoc, updateDoc, arrayUnion, getDoc, DocumentSnapshot } from 'firebase/firestore';
 
 interface postCard {
-  image: string;
+  avatar?: string;
   writer: string;
   time: string;
   content: string;
@@ -47,47 +47,41 @@ export class Tab3Page {
   }
 
   async fetchData() {
+
+    // try {
+    //   const communityPostsDoc: DocumentSnapshot<any> = await getDoc(doc(this.db, 'community', 'posts'));
+    //   const postsArray = communityPostsDoc.data()?.posts || [];
+    //   this.community = postsArray.sort((a: any, b: any) => b.timestamp - a.timestamp);
+    // } catch (error) {
+    //   console.error('Error fetching community posts:', error);
+    // }
+
     try {
-      const communitySnapshot = await getDoc(doc(this.db, 'community', 'posts'));
-      if (communitySnapshot.exists()) {
-        this.community = communitySnapshot.data()['posts'] as postCard[]; // Use 'posts' instead of 'community'
-      }
+      const communityPostsDoc: DocumentSnapshot<any> = await getDoc(doc(this.db, 'community', 'posts'));
+      const postsArray = communityPostsDoc.data()?.posts || [];
+      
+      // Fetch avatars for each post
+      const avatarPromises = postsArray.map(async (post: { writer: any; }) => {
+        try {
+          const writer = post.writer; // Assume each post has a writer that corresponds to a user in the 'users' collection
+          const userSnapshot = await getDoc(doc(this.db, 'users', writer));
+          const avatarUrl = userSnapshot.data()?.['avatar'] || 'https://firebasestorage.googleapis.com/v0/b/healthify-78015.appspot.com/o/UserPhotos%2Fjelly.png?alt=media&token=ad72f422-616d-44c6-a5e7-19ebcb5a6ff8'; // Use default avatar if none found
+          return { ...post, avatar: avatarUrl };
+        } catch (err) {
+          console.error('Error fetching avatar for post:', err);
+          return post; // Return post without avatar if there's an error
+        }
+      });
+      
+      this.community = await Promise.all(avatarPromises);
+      this.community.sort((a: any, b: any) => b.timestamp - a.timestamp);
+  
     } catch (error) {
-      console.error('Error fetching data: ', error);
+      console.error('Error fetching community posts:', error);
     }
+
+
   }
-  // isLiked: boolean = false;
-
-
-  // postCards: postCard[] = [
-  //   {
-  //     writer: 'John Doe',
-  //     image: '../../assets/UserPhotos/userPhoto.jpg',
-  //     time: '2h ago',
-  //     content:
-  //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl.',
-  //     isLiked: false,
-  //   },
-
-  //   {
-  //     writer: 'John Doe',
-  //     image: '../../assets/UserPhotos/userPhoto.jpg',
-  //     time: '2h ago',
-  //     content:
-  //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam',
-  //     isLiked: false,
-  //   },
-
-  //   {
-  //     writer: 'John Doe',
-  //     image: '../../assets/UserPhotos/userPhoto.jpg',
-  //     time: '2h ago',
-  //     content:
-  //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl. Donec euismod, nisl eget ultricies aliquam, nisl nisl aliquet nisl, eu aliquet nisl nisl nec nisl.',
-  //     isLiked: false,
-  //   },
-  // ];
-
   postAction() {
     this.navCtrl.navigateForward('/post');
   }

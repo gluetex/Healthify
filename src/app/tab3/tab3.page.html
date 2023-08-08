@@ -7,8 +7,10 @@
 <ion-content>
   <ion-card *ngFor="let card of community">
     <ion-card-header class="headerContainer">
-      <img class="imageContainer" [src]="card.image" />
-      <p class="userNameContainer">{{card.writer}}</p>
+      <div class="headerMargin">
+        <img class="imageContainer" [src]="card.avatar" />
+        <p class="userNameContainer">{{card.writer}}</p>
+      </div>
       <p class="postTime">{{card.time}}</p>
     </ion-card-header>
     <ion-card-content> {{card.content}} </ion-card-content>

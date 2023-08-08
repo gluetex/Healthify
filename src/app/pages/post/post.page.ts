@@ -3,6 +3,7 @@ import { NavController } from '@ionic/angular';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, doc, setDoc, updateDoc, arrayUnion, getDoc, DocumentSnapshot } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
+import { ChangeDetectorRef } from '@angular/core';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAhwUQ4dyWspAU53ErwArgyXhl-ZzZNw2I",
@@ -27,7 +28,7 @@ export class PostPage implements OnInit {
   private username?: string;
   community: any[] = [];
 
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController, private changeDetectorRef: ChangeDetectorRef) {
     const app = initializeApp(firebaseConfig);
     this.db = getFirestore(app);
     const auth = getAuth(app);
@@ -44,15 +45,6 @@ export class PostPage implements OnInit {
 
   ngOnInit() {}
 
-  async fetchCommunityPosts() {
-    try {
-      const communityPostsDoc: DocumentSnapshot<any> = await getDoc(doc(this.db, 'community', 'posts'));
-      this.community = (communityPostsDoc.data()?.posts || []).sort((a: { timestamp: number }, b: { timestamp: number }) => b.timestamp - a.timestamp);
-    } catch (error) {
-      console.error('Error fetching community posts:', error);
-    }
-  }
-  
   checkWordLimit() {
     const words = this.textareaContent.trim().split(/\s+/);
     if (words.length > this.maxWordLimit) {
@@ -75,8 +67,8 @@ export class PostPage implements OnInit {
         content: this.textareaContent,
         image: '', // Placeholder for the image
         time: formattedDate,
-        timestamp: currentDate.getTime(), // Add timestamp
-        writer: this.username,
+        timestamp: currentDate.getTime(),
+         writer: this.username,
         isLiked: false, // Initialize isLiked property
       };
   
@@ -94,11 +86,28 @@ export class PostPage implements OnInit {
   
       this.fetchCommunityPosts(); // Refresh community posts
   
-      this.navCtrl.navigateForward('/tabs/tab3');
+      setTimeout(() => {
+
+        this.navCtrl.navigateForward('/tabs/tab3');
+
+
+      }, 1000);
+
     } catch (error) {
       console.error('Error posting data:', error);
     }
   }
+
+  async fetchCommunityPosts() {
+    try {
+      const communityPostsDoc: DocumentSnapshot<any> = await getDoc(doc(this.db, 'community', 'posts'));
+      const postsArray = communityPostsDoc.data()?.posts || [];
+      this.community = postsArray.sort((a: any, b: any) => b.timestamp - a.timestamp);
+    } catch (error) {
+      console.error('Error fetching community posts:', error);
+    }
+  }
+  
 
   // async likeCard(card) {
   //   // Code to handle liking a card

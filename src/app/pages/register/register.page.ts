@@ -54,18 +54,21 @@ export class RegisterPage implements OnInit {
         this.email,
         this.password
       );
-      
+  
       const userId = userCredential.user.uid; // Getting user ID
-      
+  
+      const avatarURL = 'https://firebasestorage.googleapis.com/v0/b/healthify-78015.appspot.com/o/UserPhotos%2Fjelly.png?alt=media&token=ad72f422-616d-44c6-a5e7-19ebcb5a6ff8'; 
+  
       const userDetail = {
         email: this.email,
         username: this.username,
+        avatar: avatarURL, // Assigning the default avatar URL
         posts: [] // Initializing an empty posts array
       };
-      
+  
       const userRef = doc(this.db, "users", userId); // Using user ID as the document name
       await setDoc(userRef, userDetail);
-      
+  
       this.presentToast('Signup success');
       this.navCtrl.navigateForward('/login');
       return userCredential;
@@ -75,7 +78,6 @@ export class RegisterPage implements OnInit {
       return null;
     }
   }
-
   
 
   redirectAction(){

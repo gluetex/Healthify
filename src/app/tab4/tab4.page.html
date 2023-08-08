@@ -6,9 +6,8 @@
     <ion-card class="profileCardContainer">
       <ion-card-content>
         <div class="cardContainer">
-          <img src="../../assets/UserPhotos/userPhoto.jpg" />
-          <h1>John Doe</h1>
-          <p>Turkey</p>
+          <img [src]="userProfile.avatar" />
+          <h1>{{userProfile.username}}</h1>
           <ion-button size="small" color="primary" (click)="settingsAction()">Preferences</ion-button>
         </div>
 
@@ -21,12 +20,13 @@
   <div class="postSection">
     <ion-card class="postContainer" *ngFor="let card of community">
       <ion-card-header class="headerContainer">
-        <img class="image" src="../../assets/UserPhotos/userPhoto.jpg" />
+        <img class="image" [src]="card.avatar" /> <!-- use the avatar URL -->
         <p class="userNameContainer">{{card.writer}}</p>
         <p class="postTime">{{card.time}}</p>
       </ion-card-header>
       <ion-card-content> {{card.content}} </ion-card-content>
     </ion-card>
+    
   </div>
  
 </ion-content>
