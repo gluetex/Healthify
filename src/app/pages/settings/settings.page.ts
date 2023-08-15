@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NavController } from '@ionic/angular';
+import { Auth } from '@angular/fire/auth';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController,
+    private auth: Auth
+  ) {}
+
 
   ngOnInit() {
   }
+
+  async signOut() {
+    try {
+      await this.auth.signOut();
+      this.navCtrl.navigateForward('/login');  
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  }
+
 
 }

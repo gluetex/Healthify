@@ -43,6 +43,10 @@ ion-card {
 
 .inputContainer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .registerInputs {
@@ -88,4 +92,14 @@ ion-card {
     --background: white;
     padding: 0%;
   }
+}
+
+.avatarBtn{
+  --background: linear-gradient(
+    336deg,
+    rgba(215, 231, 250, 1) 0%,
+    rgba(241, 201, 255, 1) 50%,
+    rgba(215, 250, 245, 1) 100%
+  );
+  color:black;
 }

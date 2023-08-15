@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy  } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 interface TaskCard {
@@ -14,12 +14,20 @@ interface TaskCard {
   templateUrl: './weekly-task.page.html',
   styleUrls: ['./weekly-task.page.scss'],
 })
-export class WeeklyTaskPage implements OnInit {
+export class WeeklyTaskPage implements OnInit, OnDestroy  {
   progress: number = 0;
   constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {}
+  private resetInterval: any; // To store the reference for clearInterval later
 
+  ngOnInit() {
+    this.loadProgress();
+    this.scheduleResetOnMonday();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.resetInterval); // Clear the interval on component destruction
+  }
   goBackAction() {
     this.navCtrl.navigateForward('/tabs/tab2');
   }
@@ -54,9 +62,40 @@ export class WeeklyTaskPage implements OnInit {
     if (card.currentPresses < card.requiredPresses) {
       card.currentPresses++;
       this.updateProgress();
+      this.saveProgress(); // Save the progress to localStorage
+    }
+  }
+  saveProgress() {
+    localStorage.setItem('weeklyTasksProgress', JSON.stringify(this.taskCards));
+  }
+  loadProgress() {
+    const savedProgress = localStorage.getItem('weeklyTasksProgress');
+
+    if (savedProgress) {
+      const parsedProgress: TaskCard[] = JSON.parse(savedProgress);
+      this.taskCards = parsedProgress;
+      this.updateProgress();
     }
   }
 
+  // Schedule task reset every Monday
+  scheduleResetOnMonday() {
+    this.resetInterval = setInterval(() => {
+      const now = new Date();
+      // Check if today is Monday and the time is past 12am
+      if (now.getUTCDay() === 1 && now.getUTCHours() === 0) {
+        this.resetProgress();
+      }
+    }, 60 * 60 * 1000); // Check every hour
+  }
+
+  resetProgress() {
+    this.taskCards.forEach(card => {
+      card.currentPresses = 0;
+    });
+    this.updateProgress();
+    this.saveProgress(); // Save the reset progress to localStorage
+  }
   getProgressPercentage(card: TaskCard): string {
     const progressPercentage = Math.round(
       (card.currentPresses / card.requiredPresses) * 100

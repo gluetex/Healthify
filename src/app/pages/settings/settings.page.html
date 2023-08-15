@@ -22,7 +22,6 @@
     <ion-list>
       <ion-item>
         <ion-select aria-label="language" placeholder="English">
-          <ion-select-option value="tr">Turkish</ion-select-option>
           <ion-select-option value="eng">English</ion-select-option>
         </ion-select>
       </ion-item>
@@ -30,5 +29,12 @@
     
   </ion-card-content>
 </ion-card>
+<div class="buttonContainer">
+  
+  <ion-button class="signOutButton" (click)="signOut()">
+    Sign Out
+  </ion-button>
+  
+</div>
 
 </ion-content>

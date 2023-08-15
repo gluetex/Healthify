@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import {
@@ -10,6 +10,7 @@ import { getFirestore } from 'firebase/firestore';
 import { setDoc, doc, collection } from "firebase/firestore";
 
 import { initializeApp } from 'firebase/app';
+import {AvatarPage} from '../avatar/avatar.page'
 
 @Component({
   selector: 'app-register',
@@ -21,11 +22,13 @@ export class RegisterPage implements OnInit {
   email!: string;
   password!: string;
   private db: any;
+  selectedAvatarURL?: string;
 
 
   constructor(private router: Router,
      private toastController: ToastController, 
      private navCtrl: NavController, private auth: Auth,
+     private modalCtrl: ModalController
      ) { 
       const firebaseConfig = {
         apiKey: "AIzaSyAhwUQ4dyWspAU53ErwArgyXhl-ZzZNw2I",
@@ -55,15 +58,15 @@ export class RegisterPage implements OnInit {
         this.password
       );
   
-      const userId = userCredential.user.uid; // Getting user ID
+      const userId = userCredential.user.uid; 
   
-      const avatarURL = 'https://firebasestorage.googleapis.com/v0/b/healthify-78015.appspot.com/o/UserPhotos%2Fjelly.png?alt=media&token=ad72f422-616d-44c6-a5e7-19ebcb5a6ff8'; 
+      const avatarURL = this.selectedAvatarURL || 'https://firebasestorage.googleapis.com/v0/b/healthify-78015.appspot.com/o/UserPhotos%2Fjelly.png?alt=media&token=ad72f422-616d-44c6-a5e7-19ebcb5a6ff8'; 
   
       const userDetail = {
         email: this.email,
         username: this.username,
-        avatar: avatarURL, // Assigning the default avatar URL
-        posts: [] // Initializing an empty posts array
+        avatar: avatarURL, 
+        posts: []
       };
   
       const userRef = doc(this.db, "users", userId); // Using user ID as the document name
@@ -92,6 +95,22 @@ export class RegisterPage implements OnInit {
       });
       toast.present();
     }
+
+    async openDynamicForm() {
+      const modal = await this.modalCtrl.create({
+        component: AvatarPage,
+      });
+    
+      modal.onDidDismiss().then((dataReturned) => {
+        if (dataReturned.data && dataReturned.data.selectedAvatar) {
+          this.selectedAvatarURL = dataReturned.data.selectedAvatar;
+        }
+      });
+    
+      return await modal.present();
+    }
+    
   
+    
 }
 

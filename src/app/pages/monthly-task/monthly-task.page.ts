@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy  } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 interface TaskCard {
@@ -14,11 +14,20 @@ interface TaskCard {
   templateUrl: './monthly-task.page.html',
   styleUrls: ['./monthly-task.page.scss'],
 })
-export class MonthlyTaskPage implements OnInit {
+export class MonthlyTaskPage implements OnInit, OnDestroy  {
   progress: number = 0;
   constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {}
+  private resetInterval: any; 
+
+  ngOnInit() {
+    this.loadProgress();
+    this.scheduleResetOnFirstOfMonth();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.resetInterval); 
+  }
 
   goBackAction() {
     this.navCtrl.navigateForward('/tabs/tab2');
@@ -53,7 +62,39 @@ export class MonthlyTaskPage implements OnInit {
     if (card.currentPresses < card.requiredPresses) {
       card.currentPresses++;
       this.updateProgress();
+      this.saveProgress(); 
     }
+  }
+
+  saveProgress() {
+    localStorage.setItem('monthlyTasksProgress', JSON.stringify(this.taskCards));
+  }
+
+  loadProgress() {
+    const savedProgress = localStorage.getItem('monthlyTasksProgress');
+
+    if (savedProgress) {
+      const parsedProgress: TaskCard[] = JSON.parse(savedProgress);
+      this.taskCards = parsedProgress;
+      this.updateProgress();
+    }
+  }
+
+  scheduleResetOnFirstOfMonth() {
+    this.resetInterval = setInterval(() => {
+      const now = new Date();
+      if (now.getDate() === 1 && now.getHours() === 0) { 
+        this.resetProgress();
+      }
+    }, 60 * 60 * 1000); 
+  }
+
+  resetProgress() {
+    this.taskCards.forEach(card => {
+      card.currentPresses = 0;
+    });
+    this.updateProgress();
+    this.saveProgress(); 
   }
 
   getProgressPercentage(card: TaskCard): string {
