@@ -32,6 +32,12 @@
     align-items: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
+
+  toolbar-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .circular-element h1 {
     font-size: 9vw;

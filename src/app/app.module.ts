@@ -11,7 +11,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from "@angular/fire/auth";
 import { provideStorage, getStorage } from "@angular/fire/storage";
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 import { Storage, IonicStorageModule } from '@ionic/storage-angular';
 
 const firebaseConfig = {
@@ -32,7 +32,7 @@ const firebaseConfig = {
      provideAuth(() => getAuth()), provideFirestore(() => getFirestore()),
       provideStorage(() => getStorage()), IonicStorageModule.forRoot()
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },DeviceMotion,  { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },DeviceMotion,  { provide: FIREBASE_OPTIONS, useValue: firebaseConfig }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })

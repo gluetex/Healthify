@@ -84,3 +84,9 @@ ion-content {
 .btnEffect:active {
   transform: scale(0.95);
 }
+
+toolbar-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

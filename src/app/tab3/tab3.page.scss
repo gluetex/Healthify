@@ -17,7 +17,11 @@ img {
   border-radius: 100%;
   width: 20%;
 }
-
+toolbar-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .headerContainer {
   display: flex;

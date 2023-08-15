@@ -8,6 +8,12 @@
   padding: 5%;
   background: transparent;
 }
+
+toolbar-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .custom-title {
   font-family: "Playfair Display", serif;
   text-align: center;

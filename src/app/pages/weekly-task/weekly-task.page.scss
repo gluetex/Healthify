@@ -14,6 +14,12 @@
   font-size: xx-large;
 }
 
+toolbar-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .progress-inner {
   height: 100%;
   background-color: #e597ff;

@@ -87,6 +87,12 @@ p{
   flex-direction: row;
 }
 
+toolbar-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .postContainer{
     display: flex;
     align-items: center;
